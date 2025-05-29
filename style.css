@@ -22,16 +22,13 @@
   
   .logo {
     width: 500px;
-    height: auto;        
-    margin-bottom: 40px; 
+    height: auto;
+    margin-bottom: 40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .mark {
-    width: 80px;
-    height: auto;
-    cursor: pointer;
-    position: sticky;
-  }
   
   
   .link-boxes {
@@ -73,4 +70,23 @@
     line-height: 1.6;
   }
 
+  .fade-wrapper {
+    opacity: 0;
+    filter: blur(10px);
+    animation: fadeInBlur 1.2s ease-out forwards;
+  }
+  
+  @keyframes fadeInBlur {
+    0% {
+      opacity: 0;
+      filter: blur(10px);
+      transform: scale(1.02);
+    }
+    100% {
+      opacity: 1;
+      filter: blur(0);
+      transform: scale(1);
+    }
+  }
+  
   

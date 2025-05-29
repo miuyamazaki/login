@@ -16,6 +16,12 @@
 
   h1 {font-family: "Press Start 2P";
   }
+  p{
+    line-height: 2em;
+    padding: 2em;
+    margin-left: 5em;
+    margin-right: 5em;
+  }
   
   header {
     position: absolute;
