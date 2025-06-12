@@ -1,92 +1,114 @@
+/* Reset and box model */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and layout */
+body {
+  background-color: #000000;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;   
+  align-items: center;  
+  position: relative;
+}
+
+/* Background video styling */
+.bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
 
 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+.video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.66); 
+  backdrop-filter: blur(5px);   
+  z-index: -1;
+}
 
-  
-  body {
-    background-color: #000000;
-    font-family: Arial, sans-serif;
-    height: 100vh;
-    display: flex;
-    justify-content: center;   
-    align-items: center;  
-  }
-  
-  .container {
-    text-align: center;
-  }
-  
-  .logo {
-    width: 500px;
-    height: auto;
-    margin-bottom: 40px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
 
-  
-  
-  .link-boxes {
-    display: flex;
-    flex-direction: row;  
-    gap: 25px;
-    justify-content: center; 
-  }
-  
-  
-  .box {
-    display: inline-block;
-    padding: 15px 40px;
-    background-color: #00000000;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 25px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .box:hover {
-    background-color: #33333300;
-    font-style: italic;
-    size: 50px;
-  }
-  
+.fade-wrapper {
+  text-align: center;
+  z-index: 1;
+  opacity: 0;
+  filter: blur(20px);
+  animation: fadeInBlur 1.2s ease-out forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  .about-text {
-    max-width: 600px;
-  }
-  
-  .about-text h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-  }
-  
-  .about-text p {
-    font-size: 18px;
-    line-height: 1.6;
-  }
+.logo {
+  width: 500px;
+  height: auto;
+  margin-bottom: 10px;
+  display: block;
+}
 
-  .fade-wrapper {
+.link-boxes {
+  display: flex;
+  flex-direction: row;  
+  gap: 25px;
+  justify-content: center; 
+}
+
+/* Link box styles */
+.box {
+  display: inline-block;
+  padding: 15px 40px;
+  background-color: #00000000;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 25px;
+  transition: background-color 0.3s ease;
+}
+
+.box:hover {
+  background-color: #33333300;
+  font-style: italic;
+}
+
+/* Optional text styles */
+.about-text {
+  max-width: 600px;
+}
+
+.about-text h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Fade-in animation */
+@keyframes fadeInBlur {
+  0% {
     opacity: 0;
     filter: blur(10px);
-    animation: fadeInBlur 1.2s ease-out forwards;
+    transform: scale(1.02);
   }
-  
-  @keyframes fadeInBlur {
-    0% {
-      opacity: 0;
-      filter: blur(10px);
-      transform: scale(1.02);
-    }
-    100% {
-      opacity: 1;
-      filter: blur(0);
-      transform: scale(1);
-    }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
   }
-  
-  
+}
+
+
